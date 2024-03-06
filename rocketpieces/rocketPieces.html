@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/all.css" />
+  </head>
+  <body style="overflow: hidden">
+    <div class="rocketContainer">
+      <img src="./1.png" alt="" style="transform: rotate(0deg); left: -20%" />
+      <img
+        src="./2.png"
+        alt=""
+        style="transform: rotate(10deg); left: -10%; bottom: 40%"
+      />
+      <img src="./3.png" alt="" style="transform: rotate(20deg); left: 10%" />
+      <img src="./4.png" alt="" style="transform: rotate(30deg); left: 15%" />
+      <img src="./5.png" alt="" style="transform: rotate(40deg); left: 20%" />
+      <img src="./6.png" alt="" style="transform: rotate(50deg); left: 70%" />
+      <img
+        src="./samll.png"
+        alt=""
+        class="small"
+        style="display: none"
+        id="small"
+      />
+    </div>
+    <div class="rocketContainer rocketContainer2" style="display: none">
+      <img src="./small2.gif" alt="" />
+    </div>
+  </body>
+  <script>
+    var rocketContainer = document.querySelector(".rocketContainer");
+    var rocketContainer2 = document.querySelector(".rocketContainer2");
+    var rocketContainerImgs = rocketContainer.getElementsByTagName("img");
+    var imgsLength = rocketContainerImgs.length;
+    var small = document.querySelector(".small");
+    var i = 0;
+    var timer;
+    rocketContainer.addEventListener("click", function () {
+      if (i == imgsLength) {
+        rocketContainer.style.display = "none";
+        rocketContainer2.style.display = "block";
+        timer = setTimeout(() => {
+          location.href = "../astronmy/astronmy.html";
+        }, 3000);
+        return ;
+      }
+      rocketContainerImgs[i].style.bottom = 0;
+      rocketContainerImgs[i].style.left = "50%";
+      rocketContainerImgs[i].style.transform = "translateX(-50%)";
+
+      if (i == imgsLength - 2) {
+        small.style.display = "block";
+        i++;
+      } else {
+        i++;
+      }
+    });
+  </script>
+</html>

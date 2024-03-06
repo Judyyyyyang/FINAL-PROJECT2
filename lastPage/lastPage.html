@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/all.css">
+</head>
+<body>
+    <div class="lastPage">
+        <img src="./1.gif" alt="">
+        <img src="./2.png" alt="" style="display: none;">
+    </div>
+</body>
+<script>
+    var lastPage = document.querySelector(".lastPage");
+    var imgs = lastPage.getElementsByTagName("img");
+    imgs[0].onclick = function(){
+        imgs[0].style.display = "none";
+        imgs[1].style.display = "block";
+    }
+</script>
+</html>

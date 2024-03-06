@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/all.css" />
+  </head>
+  <body style="overflow: hidden">
+    <div class="yesContainer">
+      <div class="lTop">
+        <img src="./small.gif" alt="" id="small" />
+        <img src="./help.gif" alt="" class="top" id="help" />
+      </div>
+
+      <div class="rBottom begincaozuo">
+        <img src="./caozonggan.png" alt="" id="begin" />
+        <img src="./yingbi.png" alt="" class="yingbi" />
+      </div>
+      <div class="rBottomAfter rBottom" style="display: none">
+        <img src="./caozongganAfeter.png" alt="" />
+        <img
+          src="./yingbiAfter.gif"
+          alt=""
+          class="yingbi"
+          style="bottom: 2%; transform: rotate(0); right: -4%"
+        />
+      </div>
+    </div>
+    <div class="clickMe">
+      <img src="./click.png" alt="" onclick = "
+      location.href = '../rocketpieces/rocketPieces.html'; ">
+    </div>
+  </body>
+  <script>
+    var begin = document.getElementById("begin");
+    var small = document.getElementById("small");
+    var help = document.getElementById("help");
+    var beginCaozuo = document.querySelector(".begincaozuo");
+    var beginAfter = document.querySelector(".rBottomAfter");
+    var timer;
+    begin.onclick = function () {
+      if (timer) {
+        clearTimeout(timer);
+      }
+      beginCaozuo.style.display = "none";
+      beginAfter.style.display = "block";
+      timer = setTimeout(() => {
+        help.style.display = "none";
+        small.setAttribute("src", "./smallafter.gif");
+      }, 3000);
+    };
+  </script>
+</html>
